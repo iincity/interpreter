@@ -1,0 +1,51 @@
+var array = newTable();
+var str = scan();
+var len = strlen(str);
+
+
+var i = 0;
+while(i < len) {
+
+    var ch = at(str, i);
+    if(ch >= '0' && ch <= '9' || ch == '-') {
+        var start = i;
+        var end = i;
+        while( i < len && (ch >= '0' && ch <= '9' || ch == '.' || ch == '-')) {
+            end = i + 1;
+            i = i + 1;
+            ch = at(str, i);
+        }
+        push(array, strtonum(substr(str, start, end)));
+    }
+    i = i + 1;
+
+}
+
+
+len = count(array);
+var min = at(array, 0);
+var max = min;
+var sum = min;
+i = 1;
+
+while(i < len) {
+    var curr = at(array, i);
+    sum = sum + curr;
+    if(curr > max) {
+        max = curr;
+    }
+    if(curr < min) {
+        min = curr;
+    }
+    i = i + 1;
+}
+print("Length is: ");
+print(len, "");
+print("Max value is: ");
+print(max, "");
+print("Min value is: ");
+print(min, "");
+print("Sum of all values is: ");
+print(sum, "");
+print("Average value is: ");
+print(sum / len, "");

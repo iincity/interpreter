@@ -1,0 +1,25 @@
+print("TYPE LEN OF YOUR ARRAY OF STRINGS: ");
+var count = strtonum(scan());
+var table = newTable();
+
+var i = 0;
+while(i < count) {
+  print("", "ADD NEW STRING: ");
+  push(table, scan());
+  i = i + 1;
+}
+
+var str = 0;
+while(str != "exit")
+{
+  print("","TYPE ID OF STRING THAT YOU WHANT TO PRINT OR TYPE exit TO EXIT: ");
+  str = scan();
+  if(str != "exit")
+  {
+    print("ID ");
+    print(str);
+    print(", ");
+    print("STR: ");
+    print(at(table, strtonum(str)), "");
+  }
+}

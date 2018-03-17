@@ -1,0 +1,44 @@
+<VARDECL><ID, array><=><ID, newTable><(><)><SEPARATOR>
+<VARDECL><ID, str><=><ID, scan><(><)><SEPARATOR>
+<VARDECL><ID, len><=><ID, strlen><(><ID, str><)><SEPARATOR>
+<VARDECL><ID, i><=><NUM, 0><SEPARATOR>
+<WHILE><(><ID, i><<><ID, len><)><DO>
+<VARDECL><ID, ch><=><ID, at><(><ID, str><,><ID, i><)><SEPARATOR>
+<IF><(><ID, ch><>=><CHARACTER, 0><&&><ID, ch><<=><CHARACTER, 9><||><ID, ch><==><CHARACTER, -><)><DO>
+<VARDECL><ID, start><=><ID, i><SEPARATOR>
+<VARDECL><ID, end><=><ID, i><SEPARATOR>
+<WHILE><(><ID, i><<><ID, len><&&><(><ID, ch><>=><CHARACTER, 0><&&><ID, ch><<=><CHARACTER, 9><||><ID, ch><==><CHARACTER, .><||><ID, ch><==><CHARACTER, -><)><)><DO>
+<ID, end><=><ID, i><+><NUM, 1><SEPARATOR>
+<ID, i><=><ID, i><+><NUM, 1><SEPARATOR>
+<ID, ch><=><ID, at><(><ID, str><,><ID, i><)><SEPARATOR>
+<END>
+<ID, push><(><ID, array><,><ID, strtonum><(><ID, substr><(><ID, str><,><ID, start><,><ID, end><)><)><)><SEPARATOR>
+<END>
+<ID, i><=><ID, i><+><NUM, 1><SEPARATOR>
+<END>
+<ID, len><=><ID, count><(><ID, array><)><SEPARATOR>
+<VARDECL><ID, min><=><ID, at><(><ID, array><,><NUM, 0><)><SEPARATOR>
+<VARDECL><ID, max><=><ID, min><SEPARATOR>
+<VARDECL><ID, sum><=><ID, min><SEPARATOR>
+<ID, i><=><NUM, 1><SEPARATOR>
+<WHILE><(><ID, i><<><ID, len><)><DO>
+<VARDECL><ID, curr><=><ID, at><(><ID, array><,><ID, i><)><SEPARATOR>
+<ID, sum><=><ID, sum><+><ID, curr><SEPARATOR>
+<IF><(><ID, curr><>><ID, max><)><DO>
+<ID, max><=><ID, curr><SEPARATOR>
+<END>
+<IF><(><ID, curr><<><ID, min><)><DO>
+<ID, min><=><ID, curr><SEPARATOR>
+<END>
+<ID, i><=><ID, i><+><NUM, 1><SEPARATOR>
+<END>
+<ID, print><(><STRING, Length is: ><)><SEPARATOR>
+<ID, print><(><ID, len><,><STRING, ><)><SEPARATOR>
+<ID, print><(><STRING, Max value is: ><)><SEPARATOR>
+<ID, print><(><ID, max><,><STRING, ><)><SEPARATOR>
+<ID, print><(><STRING, Min value is: ><)><SEPARATOR>
+<ID, print><(><ID, min><,><STRING, ><)><SEPARATOR>
+<ID, print><(><STRING, Sum of all values is: ><)><SEPARATOR>
+<ID, print><(><ID, sum><,><STRING, ><)><SEPARATOR>
+<ID, print><(><STRING, Average value is: ><)><SEPARATOR>
+<ID, print><(><ID, sum></><ID, len><,><STRING, ><)><SEPARATOR>

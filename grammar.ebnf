@@ -1,0 +1,41 @@
+prog = { var_decl | st };
+
+var_decl = "let", ID, "=", expr, ";";
+
+st = expr_st 
+   | block_st 
+   | select_st 
+   | iter_st;
+
+expr_st = [expr], ";";  
+block_st = "{", {st}, "}"; 
+select_st = "if", "(", expr, ")", st, ["else", st];
+iter_st = "while", "(", expr, ")", st;
+expr = assign;
+assign = log_or, assign_ap;
+assign_ap = "=", log_or, assign_ap | EPS;
+log_or = log_and, log_or_ap;
+log_or_ap = "||", log_and, log_or_ap | EPS;
+log_and = eq, log_and_ap;
+log_and_ap = "&&", eq, log_and_ap | EPS;
+eq = rel, eq_ap;
+eq_ap = ("==" | "!=" ), rel, eq_ap | EPS;
+rel = add, rel_ap;
+rel_ap = ("<" | "<=" | ">" | ">=" ), add, rel_ap | EPS;
+add = mult, add_ap;
+add_ap = ("+" | "-"), mult, add_ap | EPS;
+mult = unary, mult_ap;
+mult_ap = ("*" | "/" ), unary, mult_ap | EPS;
+
+unary = primary
+  | ("+" | "-" | "!"), primary;
+
+primary = NUMBER
+  | STRING
+  | CHARACTER
+  | var_or_call
+  | parentheses;
+var_or_call = ID, [fn_call];
+parentheses = "(", expr, ")";
+fn_call= "(", [arg_list], ")";
+arg_list = expr, [",", arg_list];
