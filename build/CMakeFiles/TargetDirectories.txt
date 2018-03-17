@@ -1,0 +1,5 @@
+/home/misha/bydlokoding/interpreter/interpreter/build/CMakeFiles/edit_cache.dir
+/home/misha/bydlokoding/interpreter/interpreter/build/CMakeFiles/tree_demo.out.dir
+/home/misha/bydlokoding/interpreter/interpreter/build/CMakeFiles/tokens_demo.out.dir
+/home/misha/bydlokoding/interpreter/interpreter/build/CMakeFiles/mylua.out.dir
+/home/misha/bydlokoding/interpreter/interpreter/build/CMakeFiles/rebuild_cache.dir
