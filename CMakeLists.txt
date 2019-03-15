@@ -15,4 +15,4 @@ SET(CMAKE_C_FLAGS "-std=c11")
 add_executable(mylua.out mylua.c ${SOURCES})
 
 target_link_libraries(mylua.out m)
-SET(CMAKE_C_FLAGS "-std=c11 -lprogbase")
+SET(CMAKE_C_FLAGS "-std=c11")
