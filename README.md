@@ -1,4 +1,4 @@
-# Interpreter MyLua ver. 0.01
+# Interpreter MyLua
 Simple Interpreter written in Pure C
 
 ### Building
