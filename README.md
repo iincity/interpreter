@@ -14,4 +14,4 @@ make
 ./mylua %path_to_file
 ```
 
-All features of MyLua are showed in *simple_prog1.mlua* and *simple_prog2.mlua*
+All features of MyLua are represented in *simple_prog1.mlua* and *simple_prog2.mlua*
