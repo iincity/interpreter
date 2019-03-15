@@ -1,2 +1,17 @@
 # Interpreter MyLua ver. 0.01
-C Language Simple Interpreter
+Simple Interpreter written in Pure C
+
+### Building
+Using CMake:
+```
+mkdir build && cd build
+cmake ..
+make
+```
+
+### Running
+```
+./mylua %path_to_file
+```
+
+All features of MyLua are showed in *simple_prog1.mlua* and *simple_prog2.mlua*
